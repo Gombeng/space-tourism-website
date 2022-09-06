@@ -183,6 +183,7 @@ const Container = styled.div`
 		@media ${device.laptop} {
 			background: rgba(0, 0, 0, 0.1);
 			backdrop-filter: blur(30px);
+			position: relative;
 			
 			&::before {
 				content: '';
@@ -199,7 +200,6 @@ const Container = styled.div`
 			padding-right: 165px;
 			background: rgba(0, 0, 0, 0.1);
 			backdrop-filter: blur(30px);
-			position: relative;
 		}
 	}
 `;
