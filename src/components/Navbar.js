@@ -23,7 +23,7 @@ const Navbar = () => {
 				/>
 			</div>
 
-			<div className={click ? 'nav-text nav-menu active' : 'nav-menu'}>
+			<div className={click ? 'nav-menu active' : 'nav-menu'}>
 				<NavLink
 					to="/"
 					className={({ isActive }) => (isActive ? 'link active' : 'link')}
@@ -63,14 +63,25 @@ const Container = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 24px 24px 0;
 	position: fixed;
 	width: 100%;
 	text-align: left;
 
+	@media ${device.mobilemax} {
+		padding: 24px 24px 0;
+	}
+
+	@media ${device.tablet} {
+		padding-left: 40px;
+	}
+
 	.nav-logo {
 		img {
 			width: 40px;
+
+			@media ${device.tablet} {
+				width: 48px;
+			}
 		}
 	}
 
@@ -90,6 +101,17 @@ const Container = styled.div`
 	.nav-menu {
 		.link {
 			color: ${color.textOne};
+
+			@media ${device.tablet} {
+				&:not(:last-child) {
+					margin-right: 2rem;
+				}
+			}
+			@media ${device.laptop} {
+				&:not(:last-child) {
+					margin-right: 3rem;
+				}
+			}
 		}
 
 		span {
@@ -99,15 +121,19 @@ const Container = styled.div`
 			@media ${device.tablet} {
 				display: none;
 			}
+
+			@media ${device.laptop} {
+				display: inline;
+			}
 		}
 
-		@media ${device.tabletmax} {
+		@media ${device.mobilemax} {
 			display: flex;
 			flex-direction: column;
 			position: absolute;
 			top: -100vh;
 			right: 0;
-			width: 70%;
+			width: 69%;
 			height: 100vh;
 			padding: 153px 1px 2rem 2rem;
 			background: rgba(0, 0, 0, 0.1);
@@ -121,13 +147,29 @@ const Container = styled.div`
 
 				&:hover,
 				&.active {
-					border-right: 5px solid white;
+					border-right: 4px solid white;
 				}
 			}
 
 			&.active {
 				top: 0;
 			}
+		}
+
+		@media ${device.tablet} {
+			background-color: ${color.bg};
+			padding: 40px 48px;
+			
+			.link {
+				padding: 40px 0 37px;
+				transition: 0.3s;
+
+				&:hover,
+				&.active {
+					border-bottom: 3px solid white;
+				}
+			}
+
 		}
 	}
 `;

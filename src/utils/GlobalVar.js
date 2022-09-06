@@ -1,6 +1,6 @@
 
 export const color = {
-	bg: `#0b0d17`,
+	bg: `#151923`,
 	textOne: `#ffffff`,
 	textSec: `#d0d6f9`,
 };

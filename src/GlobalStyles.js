@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { device } from './utils/Device';
-import { color, fontfamily } from './utils/GlobalVar'
+import { color, fontfamily } from './utils/GlobalVar';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -61,17 +61,33 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h5 {
-        font-size: 28px;
         font-size: 16px;
         letter-spacing: 4.75px;
+
+        @media ${device.tablet} { 
+            font-size: 20px;
+        }
+
+        @media ${device.laptop} { 
+            font-size: 28px;
+        }
     }
 
     p {
         color: ${color.textSec};
-        font-size: 18px;
         font-size: 15px;
         line-height: 25px;
-        letter-spacing: .15px;
+        letter-spacing: .1px;
+        
+        @media ${device.tablet} { 
+            font-size: 16px;
+            letter-spacing: .09px;
+        }
+
+        @media ${device.laptop} { 
+            font-size: 18px;
+            letter-spacing: .02px;
+        }
     }
 
     .subheading-1 {
@@ -83,9 +99,13 @@ const GlobalStyle = createGlobalStyle`
         letter-spacing: 2.35px;
     }
 
-    .nav-text {
+    a.link{
         font-size: 16px;
         letter-spacing: 2.7px;
+
+        @media ${device.tablet} { 
+            font-size: 14px;
+        }
     }
 
     .font-bellefair {
