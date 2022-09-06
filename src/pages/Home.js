@@ -23,7 +23,9 @@ const Home = () => {
 					back, and relax because we’ll give you a truly out of this world
 					experience!
 				</p>
+			</div>
 
+			<div>
 				<NavLink to="/destination" className="font-bellefair cta">
 					EXPLORE
 				</NavLink>
@@ -38,6 +40,7 @@ const Container = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	padding: 5rem 24px 24px;
 	min-height: 100vh;
 	background-image: url(${BgImageHomeMobile});
@@ -70,6 +73,7 @@ const Container = styled.div`
 		@media ${device.tablet} {
 			width: 242px;
 			height: 242px;
+			font-size: 32px;
 
 			&:hover {
 				/* transition: outline 0.6s; */
@@ -95,5 +99,9 @@ const Container = styled.div`
 	@media ${device.laptop} {
 		background-image: url(${BgImageHomeDesktop});
 		background-position: right;
+		align-items: flex-end;
+		justify-content: space-around;
+		flex-direction: row;
+		padding-bottom: 15vh;
 	}
 `;

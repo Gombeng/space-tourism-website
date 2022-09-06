@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: ${fontfamily.barlow};
         min-height: 100vh;
         
-        @media ${device.desktopmax} { 
+        @media ${device.tabletmax} { 
             text-align: center;
         }
     }
@@ -102,9 +102,15 @@ const GlobalStyle = createGlobalStyle`
     a.link{
         font-size: 16px;
         letter-spacing: 2.7px;
+        color: ${color.textSec};
 
         @media ${device.tablet} { 
             font-size: 14px;
+        }
+
+        &:hover,
+        &.active{
+            color: ${color.textOne};
         }
     }
 

@@ -75,6 +75,11 @@ const Container = styled.div`
 		padding-left: 40px;
 	}
 
+	@media ${device.laptop} {
+		margin-top: 40px;
+		padding-left: 55px;
+	}
+
 	.nav-logo {
 		img {
 			width: 40px;
@@ -100,8 +105,6 @@ const Container = styled.div`
 
 	.nav-menu {
 		.link {
-			color: ${color.textOne};
-
 			@media ${device.tablet} {
 				&:not(:last-child) {
 					margin-right: 2rem;
@@ -143,9 +146,12 @@ const Container = styled.div`
 
 			.link {
 				padding: 16px 0;
-				transition: 0.3s;
+				transition: 0.6s;
 
-				&:hover,
+				&:hover {
+					border-right: 4px solid rgba(255, 255, 255, 0.5);
+				}
+
 				&.active {
 					border-right: 4px solid white;
 				}
@@ -159,17 +165,41 @@ const Container = styled.div`
 		@media ${device.tablet} {
 			background-color: ${color.bg};
 			padding: 40px 48px;
-			
+
 			.link {
 				padding: 40px 0 37px;
 				transition: 0.3s;
 
-				&:hover,
+				&:hover {
+					border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+				}
+
 				&.active {
 					border-bottom: 3px solid white;
 				}
 			}
+		}
 
+		@media ${device.laptop} {
+			background: rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(30px);
+			
+			&::before {
+				content: '';
+				position: absolute;
+				border: thin solid rgba(255, 255, 255, 0.3);
+				width: 50%;
+				top: 50%;
+				left: -45%;
+			}
+		}
+
+		@media ${device.desktop} {
+			padding-left: 123px;
+			padding-right: 165px;
+			background: rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(30px);
+			position: relative;
 		}
 	}
 `;
