@@ -41,7 +41,7 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 5rem 24px 24px;
+	padding: 7rem 24px 24px;
 	min-height: 100vh;
 	background-image: url(${BgImageHomeMobile});
 	background-size: cover;

@@ -46,7 +46,7 @@ const Navbar = () => {
 					CREW
 				</NavLink>
 				<NavLink
-					to="/tech"
+					to="/technology"
 					className={({ isActive }) => (isActive ? 'link active' : 'link')}
 				>
 					<span>03</span>
@@ -66,6 +66,7 @@ const Container = styled.div`
 	position: fixed;
 	width: 100%;
 	text-align: left;
+	z-index: 99;
 
 	@media ${device.mobilemax} {
 		padding: 24px 24px 0;
@@ -189,9 +190,9 @@ const Container = styled.div`
 				content: '';
 				position: absolute;
 				border: thin solid rgba(255, 255, 255, 0.3);
-				width: 50%;
+				width: 65%;
 				top: 50%;
-				left: -45%;
+				left: -60%;
 			}
 		}
 
